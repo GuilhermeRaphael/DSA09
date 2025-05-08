@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DSA09.Models;
-using DSA09.Utils;
+using RpgApi.Models;
+using RpgApi.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using RpgApi.Models;
 using RpgApi.Models.Enuns;
 
 
@@ -25,6 +24,7 @@ namespace RpgApi.Data
        public DbSet<Usuario> TB_USUARIOS { get; set; }
        public DbSet<Habilidade> TB_HABILIDADES { get; set; }
        public DbSet<PersonagemHabilidade> TB_PERSONAGENS_HABILIDADES { get; set; }
+       public DbSet<Disputa> TB_DISPUTAS{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,7 @@ namespace RpgApi.Data
             modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
             modelBuilder.Entity<Habilidade>().ToTable("TB_HABILIDADES");
             modelBuilder.Entity<PersonagemHabilidade>().ToTable("TB_PERSONAGENS_HABILIDADES");
+            modelBuilder.Entity<Disputa>().ToTable("TB_DISPUTAS");
 
             //RELACIONAMENTO 1/N (UM PARA MUITOS)
 
@@ -115,6 +116,13 @@ namespace RpgApi.Data
             //Define que se o perfil nao for informado, o valor padrao sera jogador
 
             modelBuilder.Entity<Usuario>().Property(u => u.Perfil).HasDefaultValue("Jogador");
+
+            modelBuilder.Entity<Disputa>().HasKey(d => d.Id);
+            //Abaixo fica o mapeamento do nome das colunas da tabela para as propriedades da classe.
+            modelBuilder.Entity<Disputa>().Property(d => d.DataDisputa).HasColumnName("Dt_Disputa");
+            modelBuilder.Entity<Disputa>().Property(d => d.AtacanteId).HasColumnName("AtacanteId");
+            modelBuilder.Entity<Disputa>().Property(d => d.OponenteId).HasColumnName("OponenteId");
+            modelBuilder.Entity<Disputa>().Property(d => d.Narracao).HasColumnName("Tx_Narracao");
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

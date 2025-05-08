@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using DSA09.Models;
-using DSA09.Utils;
+using RpgApi.Models;
+using RpgApi.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RpgApi.Data;
 
-namespace DSA09.Controllers
+namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

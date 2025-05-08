@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DSA09.Models
+namespace RpgApi.Models
 {
     public class Habilidade
     {

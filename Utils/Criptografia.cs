@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DSA09.Utils
+namespace RpgApi.Utils
 {
     public class Criptografia
     {

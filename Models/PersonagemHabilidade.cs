@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RpgApi.Models;
 
-namespace DSA09.Models
+namespace RpgApi.Models
 {
     public class PersonagemHabilidade
     {

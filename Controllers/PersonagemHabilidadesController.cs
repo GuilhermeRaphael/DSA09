@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DSA09.Models;
+using RpgApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RpgApi.Data;
-using RpgApi.Models;
 
-namespace DSA09.Controllers
+
+namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
